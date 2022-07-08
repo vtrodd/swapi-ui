@@ -1,4 +1,4 @@
 import { IPlanet, Planet } from "../../types"
-import { useResource } from "../useSingleResource"
+import { useResource } from "../useResource"
 
-const usePlanet = (id: string) => useResource<IPlanet, Planet>({ constructor: Planet, id })
+export const usePlanet = (id: string) => useResource<IPlanet, Planet>({ constructor: Planet, id })

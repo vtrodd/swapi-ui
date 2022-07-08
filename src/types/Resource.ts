@@ -22,4 +22,8 @@ export class Resource<T = IResource> implements IResource {
   get type() {
     return this.TYPE
   }
+
+  get iterableProps() {
+    return Object.entries({...this.props})
+  }
 }

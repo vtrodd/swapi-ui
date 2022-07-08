@@ -16,6 +16,7 @@ type FetchResourceOptions = {
 
 const fetchResource = async <T>(options: FetchResourceOptions) => {
   const { type, id, wookiee } = options
+  if (!type && !id) return
   let url = SWAPI_URL
   if (type) url += `/${type}`
   if (type && id) url += `/${Number(id).toString()}`

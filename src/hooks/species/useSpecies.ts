@@ -1,4 +1,4 @@
 import { ISpecies, Species } from "../../types"
-import { useResource } from "../useSingleResource"
+import { useResource } from "../useResource"
 
-const useSpecies = (id: string) => useResource<ISpecies, Species>({ constructor: Species, id })
+export const useSpecies = (id: string) => useResource<ISpecies, Species>({ constructor: Species, id })
