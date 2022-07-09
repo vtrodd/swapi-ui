@@ -1,15 +1,23 @@
 import { useCharacter } from '../../../../hooks'
+import { FilmsBlock, MetadataBlock, StarshipsBlock, VehiclesBlock } from '../common'
+import { IdentityBlock, VisualInformationBlock } from './blocks'
+
+import './CharacterCard.scss'
 
 export const CharacterCard = (props: { characterId: string }) => {
-  const [character, loading] = useCharacter(props.characterId)
-  return (
-    <div>
-      {loading
-        ? 'Loading'
-        : character.iterableProps.map(prop => {
-          return <p>{prop[0]}: {prop[1]}</p>
-        })
-      }
-    </div>
-  )
+  const [character, characterLoading] = useCharacter(props.characterId)
+
+  if (characterLoading)
+    return <>Loading</>
+  else
+    return (
+      <>
+        <IdentityBlock {...character.props} />
+        <VisualInformationBlock {...character.props} />
+        <FilmsBlock {...character.props} />
+        <StarshipsBlock {...character.props} />
+        <VehiclesBlock {...character.props} />
+        <MetadataBlock {...character.metadata} />
+      </>
+    )
 }

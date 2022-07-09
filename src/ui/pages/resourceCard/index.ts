@@ -1,4 +1,4 @@
-export * from './blocks'
+export * from './common'
 export * from './films'
 export * from './people'
 export * from './planets'

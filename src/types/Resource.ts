@@ -6,16 +6,14 @@ export interface IResource {
   url: string
 }
 
-export class Resource<T = IResource> implements IResource {
+export class Resource<T = IResource> {
+  metadata: IResource
   props: T
-  created = ''
-  edited = ''
-  url = ''
   protected TYPE: ResourceType = 'films'
 
   constructor(props?: {[Key in keyof IResource]: any}) {
     const { created, edited, url, ...otherProps } = props || {}
-    Object.assign(this, { created, edited, url })
+    this.metadata = { created, edited, url }
     this.props = otherProps as T
   }
 

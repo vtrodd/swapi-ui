@@ -1,6 +1,1 @@
-export * from './films/useFilm'
-export * from './people/useCharacter'
-export * from './planets/usePlanet'
-export * from './species/useSpecies'
-export * from './starships/useStarship'
-export * from './vehicles/useVehicle'
+export * from './resources'

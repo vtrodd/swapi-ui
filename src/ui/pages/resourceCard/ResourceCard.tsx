@@ -40,7 +40,7 @@ export const ResourceCard = (props: ResourceCardProps) => {
   }
 
   return (
-    <Container>
+    <Container className='resource-card-container'>
       {card}
     </Container>
   )

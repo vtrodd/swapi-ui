@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Resource, ResourceType } from '../types';
-import { SWAPI_URL } from '../utils/consts';
+import { Resource, ResourceType } from '../../types';
+import { SWAPI_URL } from '../../utils/consts';
 
 type ResourceOptions = {
   constructor: new (...args: any) => any
